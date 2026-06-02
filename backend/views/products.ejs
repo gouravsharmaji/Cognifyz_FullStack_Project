@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+
+<h1>Products Page</h1>
+
+<form action="/add-product" method="POST">
+
+    <input name="name" placeholder="Product Name" required>
+    <input name="price" placeholder="Price" required>
+    <input name="image" placeholder="Image URL" required>
+
+    <button type="submit">Add Product</button>
+</form>
+
+<hr>
+
+<% products.forEach(p => { %>
+
+    <div style="border:1px solid #000; padding:10px; margin:10px;">
+        <h3><%= p.name %></h3>
+        <p>₹ <%= p.price %></p>
+        <img src="<%= p.image %>" width="120">
+    </div>
+
+<% }) %>
+
+</body>
+</html>
